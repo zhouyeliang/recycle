@@ -50,21 +50,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:text="姓名：张晓红"
                 android:textColor="#333333"
                 android:textSize="31dp"/>
             <TextView 
+                android:id="@+id/address_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:text="住址：杭州市"
                 android:textColor="#333333"
                 android:textSize="31dp"/>
             <TextView 
+                android:id="@+id/jf_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:text="当前账户积分余额：1300分"
                 android:textColor="#333333"
                 android:textSize="31dp"/>
             <TextView 
@@ -94,7 +93,6 @@
             android:layout_toLeftOf="@+id/btns"
             android:layout_marginTop="10dp"
             android:layout_marginRight="30dp"
-            android:text="张女士  本次您将出售如下产品。点击投放完毕按钮，系统会将本次投放的积分计入您的账户"
             android:textSize="27sp"/>
         
          <LinearLayout
@@ -110,7 +108,7 @@
                 android:layout_width="300dp"
                 android:layout_height="60dp"
                 android:background="@drawable/button_background_green"
-                android:text="确定"
+                android:text="投放完毕"
                 android:textColor="#ffffff"
                 android:textSize="28sp"/>
             
@@ -124,7 +122,7 @@
                 android:textColor="#ffffff"
                 android:textSize="28sp"/>
             
-            <Button 
+            <!-- <Button 
                 android:id="@+id/logout_btn"
                 android:layout_width="300dp"
                 android:layout_height="60dp"
@@ -132,7 +130,7 @@
                 android:layout_marginTop="10dp"
                 android:text="退出登录"
                 android:textColor="#ffffff"
-                android:textSize="28sp"/>
+                android:textSize="28sp"/> -->
             
         </LinearLayout>
         

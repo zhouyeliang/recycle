@@ -22,7 +22,10 @@ import android_serialport_api.SerialHelper;
 import android_serialport_api.SerialPortFinder;
 
 import com.example.recycle_pad.R;
+import com.recycle.pad.manager.OrderDataManager;
 import com.recycle.pad.manager.UserDataManager;
+import com.recycle.pad.model.OrderCategory;
+import com.recycle.pad.model.base.JackJson;
 import com.recycle.pad.print.WorkService;
 import com.recycle.pad.ui.inter.DataResponseListener;
 import com.recycle.pad.ui.life.LifeActivity;
@@ -67,7 +70,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	/**
 	 * 是否是登录进来后的第一次称重
 	 */
-	private boolean isFirst = true;
+	private boolean jumpTo = false;
 	
 	
 	/**
@@ -83,6 +86,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Util.convertKgToG(4556);
 		requestWindowFeature(Window.FEATURE_NO_TITLE); 
 		setContentView(R.layout.activity_main);
 		userDataManager = UserDataManager.getInstance();
@@ -197,6 +201,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 		case R.id.ok_btn:
 			if(userDataManager.isLogin()){
+				jumpTo = true;
 				sendPortData(port,"010300000005");
 			}else{
 				Toast.makeText(this, "请先登录!", Toast.LENGTH_SHORT).show();
@@ -239,7 +244,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			glassBtn.setClickable(false);
 			phoneBtn.setClickable(false);
 			userDataManager.logout();
-			isFirst = true;
+			jumpTo = false;
 			break;
 		default:
 			break;
@@ -334,7 +339,7 @@ public class MainActivity extends Activity implements OnClickListener {
     private void DispRecData(ComBean ComRecData){
     	String result = CRC16M.getBufHexStr(ComRecData.bRec);
     	if(result.contains("01030000")){
-    		if(isFirst){
+    		if(!jumpTo){
     			String tmpPaper = result.substring(10, 14);
     			paperKg = Integer.parseInt(tmpPaper, 16);
     			String tmPlasic = result.substring(14, 18);
@@ -345,25 +350,48 @@ public class MainActivity extends Activity implements OnClickListener {
     			glassKg = Integer.parseInt(tmpGlass, 16);
     			String tmpPhone = result.substring(26, 30);
     			phoneKg = Integer.parseInt(tmpPhone, 16);
-    			isFirst = false;
+    			jumpTo = false;
     			Log.e("the kg","the kg is" + paperKg);
     			Log.e("the kg","the kg is" + plasicKg);
     			Log.e("the kg","the kg is" + applianceKg);
     			Log.e("the kg","the kg is" + glassKg);
     			Log.e("the kg","the kg is" + phoneKg);
     		}else{
-    			int subPaper = Integer.parseInt(result.substring(10, 14), 16) - paperKg;
-    			int subPlasic = Integer.parseInt(result.substring(14, 18), 16) - paperKg;
-    			int subApp = Integer.parseInt(result.substring(18, 22), 16) - paperKg;
-    			int subGlass = Integer.parseInt(result.substring(22, 26), 16) - paperKg;
-    			int subPhone = Integer.parseInt(result.substring(26, 30), 16) - paperKg;
-    			Bundle bundle = new Bundle();
-    			bundle.putInt("paper", subPaper);
-    			bundle.putInt("plasic", subPlasic);
-    			bundle.putInt("app", subApp);
-    			bundle.putInt("glass", subGlass);
-    			bundle.putInt("phone", subPhone);
-    			Util.jumpTo(this, RecycleActivity.class,bundle);
+    			final int subPaper = Integer.parseInt(result.substring(10, 14), 16) - paperKg;
+    			final int subPlasic = Integer.parseInt(result.substring(14, 18), 16) - paperKg;
+    			final int subApp = Integer.parseInt(result.substring(18, 22), 16) - paperKg;
+    			final int subGlass = Integer.parseInt(result.substring(22, 26), 16) - paperKg;
+    			final int subPhone = Integer.parseInt(result.substring(26, 30), 16) - paperKg;
+    			StringBuffer categoryIds = new StringBuffer();
+    			StringBuffer nums = new StringBuffer();
+    			
+    			/*categoryIds.append("1").append("|");
+    			nums.append(Math.subPaper + "").append("|");
+    			categoryIds.append("2").append("|");
+    			nums.append("subPlasic").append("|");
+    			categoryIds.append("4").append("|");
+    			nums.append("subApp").append("|");
+    			categoryIds.append("3").append("|");
+    			nums.append("subGlass").append("|");
+    			categoryIds.append("5");
+    			nums.append("subPhone");*/
+				OrderDataManager.getInstance().goOrder(MainActivity.this, categoryIds.toString(), nums.toString(), UserDataManager.getInstance().getUser().getUserId()+"",
+						null, null, null, null,new DataResponseListener<JackJson>() {
+							@Override
+							public void response(JackJson t) {
+								if(t!=null){
+									Bundle bundle = new Bundle();
+					    			bundle.putInt("paper", subPaper);
+					    			bundle.putInt("plasic", subPlasic);
+					    			bundle.putInt("app", subApp);
+					    			bundle.putInt("glass", subGlass);
+					    			bundle.putInt("phone", subPhone);
+					    			Util.jumpTo(MainActivity.this, RecycleActivity.class,bundle);
+								}
+								
+							}
+				});
+				
     		}
     	}
     }

@@ -102,6 +102,19 @@ public final class Util {
 	}
 	
 	
+	/**
+	 * 克转成千克
+	 * @param g
+	 * @return
+	 */
+	public static float  convertKgToG(int g){
+		float kg  = ((float)g)/10;
+		int temp = Math.round(kg);
+		float result  = (float)temp/100;
+		return result;
+    }
+	
+	
 	/** 
      * 根据手机的分辨率从 dp 的单位 转成为 px(像素) 
      */  

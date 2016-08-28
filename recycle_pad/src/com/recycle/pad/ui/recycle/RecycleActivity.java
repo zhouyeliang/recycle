@@ -1,5 +1,6 @@
 package com.recycle.pad.ui.recycle;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import android.app.Activity;
@@ -103,7 +104,7 @@ public class RecycleActivity extends Activity implements OnClickListener {
 		for(int i =0;i<list.size();++i){
 			totalJf = totalJf + Float.parseFloat(list.get(i).getCategoryjf()) * Float.parseFloat(list.get(i).getCategoryNum());
 		}
-		totalTv.setText(totalJf + "积分");
+		totalTv.setText(new DecimalFormat("#.##").format(totalJf) + "积分");
 	}
 	 
 

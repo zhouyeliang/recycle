@@ -86,7 +86,6 @@ public class MainActivity extends Activity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		Util.convertKgToG(4556);
 		requestWindowFeature(Window.FEATURE_NO_TITLE); 
 		setContentView(R.layout.activity_main);
 		userDataManager = UserDataManager.getInstance();
@@ -111,7 +110,6 @@ public class MainActivity extends Activity implements OnClickListener {
 			ShowMessage("打开串口失败:参数错误!");
 		}
 		initView();
-		
 		if (null == WorkService.workThread) {
 			Intent intent = new Intent(this, WorkService.class);
 			startService(intent);

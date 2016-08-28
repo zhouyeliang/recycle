@@ -47,9 +47,6 @@
         <activity android:name="com.recycle.pad.ui.recycle.RecycleActivity"
             android:screenOrientation="landscape">
         </activity>
-        <activity android:name="com.recycle.pad.ui.recycle.RecycleSuccessActivity"
-            android:screenOrientation="landscape">
-        </activity>
         
         <receiver android:name="com.recycle.pad.receiver.BootBroadcastReceiver">
         	<intent-filter>

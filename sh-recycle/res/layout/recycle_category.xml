@@ -1,0 +1,79 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/write"
+        android:paddingBottom="5dp"
+        android:paddingTop="10dp" >
+
+        <ImageView
+            android:id="@+id/title_leftimg"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="3dp"
+            android:paddingLeft="12dp"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/title_midtext"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textColor="#565656"
+            android:textSize="@dimen/thirtyeight_px" />
+
+        <ImageView
+            android:id="@+id/title_right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:gravity="center"
+            android:src="@drawable/user_icon" />
+    </RelativeLayout>
+	<View 
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/green"/>
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="horizontal"
+	    android:paddingBottom="@dimen/activity_vertical_margin"
+	    tools:context=".DrawerLayoutActivity" >
+		<LinearLayout 
+		    android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:layout_weight="6"
+	        android:background="@drawable/write_background_recycle_type">
+	    <ListView 
+	        android:id="@+id/type_recycle"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:scrollbars="none"
+	        >
+	        
+	    </ListView>
+	    </LinearLayout>
+	
+	    <FrameLayout  
+	        android:id="@+id/recycle_content"  
+	        android:layout_width="match_parent"  
+	        android:layout_height="match_parent"
+	        android:layout_weight="2"
+	        android:background="@drawable/write_background_recycle_type"> 
+	
+	    </FrameLayout> 
+	        
+	</LinearLayout>
+
+</LinearLayout>

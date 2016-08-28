@@ -1,0 +1,119 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2"
+    android:orientation="vertical" >
+
+    <include layout="@layout/layout_title" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/green" />
+
+    <View
+        style="@style/line"
+        android:layout_marginTop="15dp" />
+
+    <RelativeLayout
+        android:id="@+id/clean_cache"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffffff" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:gravity="center_vertical|left"
+            android:text="清除缓存"
+            android:textColor="#4D4D4D"
+            android:textSize="@dimen/thirty_px" />
+        <TextView 
+            android:id="@+id/cache_size"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/right_icon"
+            android:gravity="center_vertical"
+            android:textColor="#cccccc"
+            android:text="0.0k"
+            android:textSize="@dimen/thirty_px"
+            android:layout_marginRight="8dp"/>
+
+        <ImageView
+            android:id="@id/right_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/next" />
+    </RelativeLayout>
+    
+     <View
+        style="@style/line" />
+     
+     <View
+        style="@style/line"
+        android:layout_marginTop="15dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffffff" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:gravity="center_vertical|left"
+            android:text="版本介绍"
+            android:textColor="#4D4D4D"
+            android:textSize="@dimen/thirty_px" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/next" />
+    </RelativeLayout>
+     <View
+        style="@style/line"
+        android:layout_marginLeft="15dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffffff" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:gravity="center_vertical|left"
+            android:text="版权声明"
+            android:textColor="#4D4D4D"
+            android:textSize="@dimen/thirty_px" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/next" />
+    </RelativeLayout>
+    
+    <View
+        style="@style/line"/>
+    
+
+</LinearLayout>

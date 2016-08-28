@@ -1,0 +1,36 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginBottom="12dp"
+    android:padding="10dp"
+    android:background="@drawable/write_background"
+    tools:context=".DrawerLayoutActivity" >
+	<ImageView 
+	    android:id="@+id/goods_icon"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:src="@drawable/ic_launcher"
+	    android:scaleType="fitCenter"/>
+	
+	<TextView 
+	    android:id="@+id/goods_title"
+	    android:layout_marginTop="13dp"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:textSize="@dimen/twentysix_px"
+	    android:textColor="#4d4d4d"
+	    android:gravity="center_vertical"
+	    android:text="新疆烤鱼的水果"/>
+	<TextView 
+	    android:id="@+id/goods_price"
+	    android:layout_marginTop="19dp"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:textSize="@dimen/thirtysix_px"
+	    android:textColor="#EB2929"
+	    android:gravity="right|center_vertical"
+	    android:text="￥2.4元/斤"/>
+
+</LinearLayout>

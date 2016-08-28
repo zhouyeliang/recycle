@@ -1,0 +1,120 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/write"
+        android:paddingBottom="5dp"
+        android:paddingTop="10dp" >
+
+        <ImageView
+            android:id="@+id/title_leftimg"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="3dp"
+            android:paddingLeft="12dp"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/title_midtext"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="注册"
+            android:textColor="#565656"
+            android:textSize="@dimen/thirtyeight_px" />
+
+        
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/green" />
+
+    <View
+        style="@style/line"
+        android:layout_marginTop="15dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffffff"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:background="#ffffff"
+            android:gravity="left|center_vertical"
+            android:text="账户"
+            android:textColor="#bfbfbf"
+            android:textSize="@dimen/thirty_px" />
+        
+        <EditText 
+            android:id="@+id/user_name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="@dimen/thirty_px"
+            android:gravity="left|center_vertical"
+            android:layout_marginLeft="10dp"
+            android:hint="4-20位数字、字母或下划线"
+            android:background="#ffffff"/>
+    </LinearLayout>
+
+    <View
+        style="@style/line"
+        android:layout_marginLeft="15dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffffff"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:background="#ffffff"
+            android:gravity="left|center_vertical"
+            android:text="密码"
+            android:textColor="#bfbfbf"
+            android:textSize="@dimen/thirty_px" />
+        <EditText 
+            android:id="@+id/user_password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="@dimen/thirty_px"
+            android:inputType="textPassword"
+            android:gravity="left|center_vertical"
+            android:layout_marginLeft="10dp"
+            android:hint="6-20位数字、字母或符号"
+            android:background="#ffffff"/>
+    </LinearLayout>
+
+    <View style="@style/line" />
+
+    <Button
+        android:id="@+id/register_button"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_background_green"
+        android:text="注册"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/thirtysix_px" />
+
+</LinearLayout>

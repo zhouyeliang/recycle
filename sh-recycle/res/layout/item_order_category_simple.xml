@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/name_tel_linear"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="#ffffff"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="15dp" >
+
+    <TextView
+        android:id="@+id/recycle_type"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="4dp"
+        android:gravity="center_vertical"
+        android:text="张三"
+        android:textColor="#4D4D4D"
+        android:textSize="@dimen/thirty_px" />
+
+    <TextView
+        android:id="@+id/money"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:gravity="center_vertical"
+        android:text="2.4积分"
+        android:textColor="#4D4D4D"
+        android:textSize="@dimen/thirty_px" />
+
+    <TextView
+        android:id="@+id/num"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginRight="25dp"
+        android:layout_toLeftOf="@id/money"
+        android:gravity="center_vertical"
+        android:text="3公斤"
+        android:textColor="#4D4D4D"
+        android:textSize="@dimen/thirty_px" />
+
+</RelativeLayout>

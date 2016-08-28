@@ -1,0 +1,114 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DrawerLayoutActivity" >
+
+    <View
+        android:id="@+id/grey_line"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/bg_grey" />
+
+    <View style="@style/line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#ffffff" >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical|left"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/order_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:gravity="left|center_vertical"
+                android:text="111111"
+                android:textColor="@color/text_deep_grey"
+                android:layout_marginBottom="7dp"
+                android:textSize="@dimen/twentyeight_px" />
+            
+            <TextView
+                android:id="@+id/order_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:layout_marginBottom="7dp"
+                android:text="111111"
+                android:textColor="@color/text_shallow_grey"
+                android:textSize="@dimen/twentytwo_px" />
+
+            <TextView
+                android:id="@+id/order_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:text="111111"
+                android:textColor="@color/text_shallow_grey"
+                android:textSize="@dimen/twentytwo_px" />
+            
+            
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        style="@style/line"
+        android:layout_marginLeft="15dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#ffffff"  >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:textSize="@dimen/twentysix_px"
+            android:text="积分：" />
+
+         <TextView
+            android:id="@+id/order_jf"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="10"
+            android:layout_marginRight="15dp"
+            android:textColor="#EB2929"
+            android:textSize="@dimen/thirtyfour_px" />
+         
+         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:textSize="@dimen/twentysix_px"
+            android:text="数量：" />
+
+         <TextView
+            android:id="@+id/order_number"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="10"
+            android:layout_marginRight="15dp"
+            android:textColor="#EB2929"
+            android:textSize="@dimen/thirtyfour_px" />
+    </LinearLayout>
+
+    <View style="@style/line" />
+
+</LinearLayout>

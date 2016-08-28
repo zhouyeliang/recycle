@@ -1,0 +1,251 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2"
+    android:orientation="vertical" >
+
+    <include layout="@layout/layout_title" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/green" />
+
+    <TextView
+        android:id="@+id/check_title"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:background="#f8dfa4"
+        android:gravity="center"
+        android:text="订单审核中，请稍候"
+        android:textColor="#8d6f1f"
+        android:textSize="@dimen/twentyeight_px" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F2F2F2"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="#ffffff"
+                android:paddingTop="20dp" >
+
+                <ImageView
+                    android:id="@+id/check_start_img"
+                    android:layout_width="@dimen/check_img"
+                    android:layout_height="@dimen/check_img"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/check_start_yes" />
+
+                <ImageView
+                    android:id="@+id/check_wait_img"
+                    android:layout_width="@dimen/check_img"
+                    android:layout_height="@dimen/check_img"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/check_wait_no" />
+
+                <ImageView
+                    android:id="@+id/check_succ_img"
+                    android:layout_width="@dimen/check_img"
+                    android:layout_height="@dimen/check_img"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30dp"
+                    android:src="@drawable/check_suc_no" />
+
+                <TextView
+                    android:id="@+id/check_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/check_start_img"
+                    android:layout_marginLeft="27dp"
+                    android:layout_marginTop="5dp"
+                    android:text="下单成功"
+                    android:textColor="#4D4D4D"
+                    android:textSize="@dimen/twentytwo_px" />
+
+                <TextView
+                    android:id="@+id/check_wait"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/check_start_img"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:text="待接单"
+                    android:textColor="#4D4D4D"
+                    android:textSize="@dimen/twentytwo_px" />
+
+                <TextView
+                    android:id="@+id/check_succ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/check_start_img"
+                    android:layout_marginRight="27dp"
+                    android:layout_marginTop="5dp"
+                    android:text="订单完成"
+                    android:textColor="#4D4D4D"
+                    android:textSize="@dimen/twentytwo_px" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text="货品详情"
+                android:textSize="@dimen/twentyeight_px" />
+
+            <com.recycle.android.ui.widget.ListViewForScrollView 
+                android:id="@+id/list_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:dividerHeight="1px">
+                
+            </com.recycle.android.ui.widget.ListViewForScrollView>
+            <View style="@style/line"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/write_background"
+                android:paddingLeft="15dp" >
+
+                <TextView
+                    android:id="@+id/check_name_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="姓名:"
+                    android:textColor="#4D4D4D"
+                    android:textSize="@dimen/twentysix_px" />
+
+                <TextView
+                    android:id="@+id/check_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/check_name_title"
+                    android:text="张三"
+                    android:textColor="#4D4D4D"
+                    android:textSize="@dimen/twentysix_px" />
+
+                <TextView
+                    android:id="@+id/check_tel_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/check_name_title"
+                    android:layout_marginTop="6dp"
+                    android:text="电话:"
+                    android:textColor="#4D4D4D"
+                    android:textSize="@dimen/twentysix_px" />
+
+                <TextView
+                    android:id="@+id/check_tel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/check_name_title"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/check_tel_title"
+                    android:text="18858107824"
+                    android:textColor="#4D4D4D"
+                    android:textSize="@dimen/twentysix_px" />
+
+                <TextView
+                    android:id="@+id/check_add_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/check_tel_title"
+                    android:layout_marginTop="6dp"
+                    android:text="地址:"
+                    android:textColor="#4D4D4D"
+                    android:textSize="@dimen/twentysix_px" />
+
+                <TextView
+                    android:id="@+id/check_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/check_tel_title"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/check_add_title"
+                    android:text="杭州市滨江区"
+                    android:textColor="#4D4D4D"
+                    android:textSize="@dimen/twentysix_px" />
+
+                <TextView
+                    android:id="@+id/check_deliver_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/check_add"
+                    android:layout_marginTop="6dp"
+                    android:text="送货方式:"
+                    android:textColor="#4D4D4D"
+                    android:textSize="@dimen/twentysix_px" />
+
+                <TextView
+                    android:id="@+id/check_deliver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/check_add"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/check_deliver_title"
+                    android:text="上门取件（12:00-3:00）"
+                    android:textColor="#4D4D4D"
+                    android:textSize="@dimen/twentysix_px" />
+
+                <TextView
+                    android:id="@+id/check_sn_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/check_deliver"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="10dp"
+                    android:text="订单编号:"
+                    android:textColor="#4D4D4D"
+                    android:textSize="@dimen/twentysix_px" />
+
+                <TextView
+                    android:id="@+id/check_sn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/check_deliver"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/check_sn_title"
+                    android:text="42367348490"
+                    android:textColor="#4D4D4D"
+                    android:textSize="@dimen/twentysix_px" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/cancel_buttom"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/write_background"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text="取消订单"
+                android:textColor="#f47c1e"
+                android:textSize="@dimen/thirty_px" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

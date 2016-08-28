@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:paddingLeft="15dp" >
+
+    <ImageView
+        android:id="@+id/camera_image"
+        android:layout_width="wrap_content"
+        android:layout_height="95dp"
+        android:src="@drawable/camera_nor" />
+
+    <TextView
+        android:id="@+id/order_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/camera_image"
+        android:text="废书刊杂志"
+        android:textSize="@dimen/thirtytwo_px" />
+
+    <TextView
+        android:id="@+id/order_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/order_title"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/camera_image"
+        android:text="3 公斤  "
+        android:textSize="@dimen/twentysix_px" />
+
+    <TextView
+        android:id="@+id/order_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/order_num"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/camera_image"
+        android:text="2.4积分"
+        android:textColor="#EB2929"
+        android:textSize="@dimen/thirtyfour_px" />
+
+</RelativeLayout>

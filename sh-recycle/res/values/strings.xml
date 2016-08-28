@@ -1,0 +1,28 @@
+<resources>
+
+    <string name="app_name">易收</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="content_description">图片出错</string>
+
+    <string name="button_cancel">取消</string>
+    <string name="button_ok">确定</string>
+    
+    <!-- 菜单页面相关文字 -->
+    
+    <string name="logout">退出登录</string>
+    <string name="my_form">我的订单</string>
+    <string name="my_wallet">我的钱包</string>
+    <string name="my_qrcode">我的二维码</string>
+    <string name="my_address">配送地址管理</string>
+    <string name="my_coupon">优惠券</string>
+    <string name="my_opinion">意见反馈</string>
+    <string name="my_setting">设置</string>
+    
+    <!-- 首界面相关  -->
+    <string name="recycle_button">易回收</string>
+    <string name="life_button">爱生活</string>
+    
+
+</resources>

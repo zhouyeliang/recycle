@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:layout_width="match_parent"  
+    android:layout_height="match_parent"  
+    android:background="@drawable/write_background_menu" >  
+  
+    <LinearLayout  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content"  
+        android:orientation="vertical" > 
+        <LinearLayout 
+            android:layout_width="match_parent"
+  		    android:layout_height="wrap_content"
+  		    android:background="@drawable/bg"
+  		    android:orientation="vertical"
+  		    android:gravity="center">
+            <ImageView 
+                android:id="@+id/user_icon"
+  		    	android:layout_width="63dp"
+  		    	android:layout_height="63dp"
+  		    	android:src="@drawable/ccamer_over"
+  		    	android:layout_marginBottom="11dp"/>
+            <TextView 
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"  
+                android:layout_height="wrap_content"
+                android:textColor="@color/write"  
+                android:textSize="@dimen/thirtytwo_px"/>
+        </LinearLayout> 
+  		
+        <RelativeLayout  
+            android:layout_width="match_parent"  
+            android:layout_height="@dimen/item_height"
+            android:id="@+id/my_order_layout" >  
+  
+            <ImageView  
+                android:id="@+id/my_order"  
+                style="@style/iconImage"  
+                android:layout_centerVertical="true"  
+                android:layout_marginLeft="@dimen/image_left"  
+                android:layout_marginTop="@dimen/image_left"  
+                android:src="@drawable/form" />  
+  
+            <TextView  
+                android:layout_width="fill_parent"  
+                android:layout_height="wrap_content"  
+                android:layout_centerVertical="true"  
+                android:layout_marginLeft="@dimen/text_left"  
+                android:layout_toRightOf="@id/my_order"  
+                android:text="@string/my_form"  
+                android:textColor="@color/menu_text_color"  
+                android:textSize="@dimen/thirtytwo_px" />  
+        </RelativeLayout>  
+  		<View style="@style/line"/>
+        <RelativeLayout  
+            android:layout_width="match_parent"  
+            android:layout_height="@dimen/item_height"
+            android:id="@+id/my_wallet_layout" >  
+  
+            <ImageView  
+                android:id="@+id/my_wallet"  
+                style="@style/iconImage"  
+                android:layout_centerVertical="true"  
+                android:layout_marginLeft="@dimen/image_left"  
+                android:layout_marginTop="@dimen/image_left"  
+                android:src="@drawable/wallet" />  
+  
+            <TextView  
+                android:layout_width="fill_parent"  
+                android:layout_height="wrap_content"  
+                android:layout_centerVertical="true"  
+                android:layout_marginLeft="@dimen/text_left"  
+                android:layout_toRightOf="@id/my_wallet"  
+                android:text="@string/my_wallet"  
+                android:textColor="@color/menu_text_color"  
+                android:textSize="@dimen/thirtytwo_px" />  
+        </RelativeLayout>  
+  		<View style="@style/line"/>
+  		<RelativeLayout  
+            android:layout_width="match_parent"  
+            android:layout_height="@dimen/item_height"
+            android:id="@+id/my_qrcode_layout" >  
+  
+            <ImageView  
+                android:id="@+id/my_qrcode"  
+                style="@style/iconImage"  
+                android:layout_centerVertical="true"  
+                android:layout_marginLeft="@dimen/image_left"  
+                android:layout_marginTop="@dimen/image_left"  
+                android:src="@drawable/wallet" />  
+  
+            <TextView  
+                android:layout_width="fill_parent"  
+                android:layout_height="wrap_content"  
+                android:layout_centerVertical="true"  
+                android:layout_marginLeft="@dimen/text_left"  
+                android:layout_toRightOf="@id/my_qrcode"  
+                android:text="@string/my_qrcode"  
+                android:textColor="@color/menu_text_color"  
+                android:textSize="@dimen/thirtytwo_px" />  
+        </RelativeLayout>  
+  		<View style="@style/line"/>
+        <RelativeLayout  
+            android:layout_width="match_parent"  
+            android:layout_height="@dimen/item_height" 
+            android:id="@+id/my_address_layout">  
+  
+            <ImageView  
+                android:id="@+id/my_address"  
+                style="@style/iconImage"  
+                android:layout_centerVertical="true"  
+                android:layout_marginLeft="@dimen/image_left"  
+                android:layout_marginTop="@dimen/image_left"  
+                android:src="@drawable/address" />  
+  
+            <TextView  
+                android:layout_width="fill_parent"  
+                android:layout_height="wrap_content"  
+                android:layout_centerVertical="true"  
+                android:layout_marginLeft="@dimen/text_left"  
+                android:layout_toRightOf="@id/my_address"  
+                android:text="@string/my_address"  
+                android:textColor="@color/menu_text_color"  
+                android:textSize="@dimen/thirtytwo_px" />  
+        </RelativeLayout>  
+  		<View style="@style/line"/>
+        <RelativeLayout  
+            android:layout_width="match_parent"  
+            android:layout_height="@dimen/item_height" 
+            android:id="@+id/my_coupon_layout">  
+  
+            <ImageView  
+                android:id="@+id/my_coupon"  
+                style="@style/iconImage"   
+                android:layout_centerVertical="true"  
+                android:layout_marginLeft="@dimen/image_left"  
+                android:layout_marginTop="@dimen/image_left"  
+                android:src="@drawable/coupon" />  
+  
+            <TextView  
+                android:layout_width="fill_parent"  
+                android:layout_height="wrap_content"  
+                android:layout_centerVertical="true"  
+                android:layout_marginLeft="@dimen/text_left"  
+                android:layout_toRightOf="@id/my_coupon"  
+                android:text="@string/my_coupon"  
+                android:textColor="@color/menu_text_color"  
+                android:textSize="@dimen/thirtytwo_px" />  
+        </RelativeLayout>  
+  		<View style="@style/line"/>
+        <RelativeLayout  
+            android:layout_width="match_parent"  
+            android:layout_height="@dimen/item_height"
+            android:id="@+id/my_opinion_layout" >  
+  
+            <ImageView  
+                android:id="@+id/my_opinion"  
+                style="@style/iconImage"  
+                android:layout_centerVertical="true"  
+                android:layout_marginLeft="@dimen/image_left"  
+                android:layout_marginTop="@dimen/image_left"  
+                android:src="@drawable/opinion" />  
+  
+            <TextView  
+                android:layout_width="fill_parent"  
+                android:layout_height="wrap_content"  
+                android:layout_centerVertical="true"  
+                android:layout_marginLeft="@dimen/text_left"  
+                android:layout_toRightOf="@id/my_opinion"  
+                android:text="@string/my_opinion"  
+                android:textColor="@color/menu_text_color"  
+                android:textSize="@dimen/thirtytwo_px" />  
+        </RelativeLayout>  
+        <View style="@style/line"/>
+        <RelativeLayout  
+            android:layout_width="match_parent"  
+            android:layout_height="@dimen/item_height" 
+            android:id="@+id/my_setting_layout">  
+  
+            <ImageView  
+                android:id="@+id/my_setting"  
+                style="@style/iconImage" 
+                android:layout_centerVertical="true"  
+                android:layout_marginLeft="@dimen/image_left"  
+                android:layout_marginTop="@dimen/image_left"  
+                android:src="@drawable/setting" />  
+  
+            <TextView  
+                android:layout_width="fill_parent"  
+                android:layout_height="wrap_content"  
+                android:layout_centerVertical="true"  
+                android:layout_marginLeft="@dimen/text_left"  
+                android:layout_toRightOf="@id/my_setting"  
+                android:text="@string/my_setting"  
+                android:textColor="@color/menu_text_color"  
+                android:textSize="@dimen/thirtytwo_px" />  
+        </RelativeLayout>  
+        <View style="@style/line"/>
+        <TextView 
+            android:id="@+id/login_state"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_height"
+            android:gravity="center"
+            android:text="@string/logout"  
+            android:textColor="#19c87f"  
+            android:textSize="@dimen/thirtytwo_px"/>
+        <View style="@style/line"/>
+    </LinearLayout>  
+  
+</RelativeLayout>

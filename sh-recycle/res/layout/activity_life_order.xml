@@ -1,0 +1,99 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F2F2F2"
+        android:orientation="vertical" >
+
+        <include layout="@layout/layout_title" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="@color/green" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#F2F2F2"
+                android:orientation="vertical" >
+
+                <com.recycle.android.ui.widget.ListViewForScrollView
+                    android:id="@+id/order_cate_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:dividerHeight="1px" >
+                </com.recycle.android.ui.widget.ListViewForScrollView>
+
+                <View style="@style/line" />
+
+                <TextView
+                    android:id="@+id/go_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="#ffffff"
+                    android:gravity="center"
+                    android:text="继续添加"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/thirtyfour_px" />
+
+                <View style="@style/line" />
+
+                <RelativeLayout
+                    android:id="@+id/orer_user_delivery_relative"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:background="#ffffff"
+                    android:paddingLeft="15dp"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:id="@+id/orer_user_delivery"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="自己送货上门"
+                        android:textColor="#4D4D4D"
+                        android:textSize="@dimen/thirty_px" />
+
+                    <ImageView
+                        android:id="@+id/delivery_icon"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/select"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <View style="@style/line" />
+
+                <Button
+                    android:id="@+id/order_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/button_background_orange"
+                    android:text="立即购买"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/thirtysix_px" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</FrameLayout>

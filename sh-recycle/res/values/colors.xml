@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="province_line_border">#D0D0D0</color>
+    <color name="menu_text_color">#707070</color>
+    
+    <color name="write">#ffffff</color>
+    
+    <color name="green">#19c87f</color>
+    
+    <color name="bg_grey">#F2F2F2</color>
+    <color name="text_shallow_grey">#818181</color>
+    <color name="text_deep_grey">#4d4d4d</color>
+    <color name="text_yellow">#f47c1e</color>
+    <color name="text_green">#1dd186</color>
+    
+    <!-- ios风格弹出框相关 -->
+    <color name="trans">#00000000</color>
+    <color name="black">#000000</color>
+    <color name="alertdialog_line">#c6c6c6</color>
+    <color name="actionsheet_blue">#037BFF</color>
+    <color name="actionsheet_red">#FD4A2E</color>
+    <color name="actionsheet_gray">#8F8F8F</color>
+</resources>

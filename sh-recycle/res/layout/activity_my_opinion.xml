@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_grey"
+    android:orientation="vertical" >
+
+    <include layout="@layout/layout_title" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/green" />
+
+    <EditText
+        android:id="@+id/opinion"
+        android:layout_width="match_parent"
+        android:layout_height="205dp"
+        android:background="#ffffff"
+        android:gravity="top|left"
+        android:hint="请输入您的反馈意见"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"
+        android:textSize="@dimen/thirty_px" />
+
+    <View style="@style/line" />
+
+</LinearLayout>

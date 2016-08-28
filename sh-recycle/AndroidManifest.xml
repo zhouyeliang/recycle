@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.recycle.recycle"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <application
+        android:name="com.recycle.android.application.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+        <activity
+            android:name="com.recycle.android.ui.main.StartActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppStartLoadTranslucent" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.recycle.android.ui.main.MainActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppStartLoadTranslucent" >
+        </activity>
+        <activity android:name="com.recycle.android.ui.recycle.RecycleActivity" 
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.recycle.android.ui.recycle.RecycleDetailActivity"
+            android:theme="@android:style/Theme.Translucent"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name="com.recycle.android.ui.order.OrderActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name="com.recycle.android.ui.main.CheckActivity" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.recycle.android.ui.recycle.TimePickActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.recycle.android.ui.my.MyOrderActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.recycle.android.ui.my.MyCouponActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="come.recycle.android.ui.login.LoginActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.recycle.android.ui.my.MyOpinionActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.recycle.android.ui.my.MyAddressActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.recycle.android.ui.my.AddAddressActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.recycle.android.ui.my.MyWalletActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.recycle.android.ui.my.SettingActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.recycle.android.ui.life.LifeActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.recycle.android.ui.my.MyQrCodeActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.recycle.android.ui.order.OrderDetailActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="come.recycle.android.ui.login.RegisterActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.recycle.android.ui.life.LifeOrderActivity"
+            android:screenOrientation="portrait">
+        </activity>
+    </application>
+
+</manifest>

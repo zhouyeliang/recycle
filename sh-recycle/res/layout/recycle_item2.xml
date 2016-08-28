@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/write_background_recycle_type"
+    tools:context=".DrawerLayoutActivity" >
+    
+    <ImageView 
+        android:padding="1px"
+        android:id="@+id/recycle_image"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        />
+    
+    <TextView 
+        android:id="@+id/recycle_text"
+        android:layout_width="72dp"
+        android:layout_height="23dp"
+        android:textSize="@dimen/twenty_px"
+        android:text="111111"
+        android:gravity="center"
+        android:textColor="#3B3B3B"
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>

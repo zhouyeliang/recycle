@@ -61,8 +61,7 @@ public class User extends JackJson{
 	public void initJackJson(JSONObject job) throws JSONException {
 		userId = job.optString(KEY_USER_ID);
 		userName = job.optString(KEY_USER_NAME);
-		//qrCode = job.optString(KEY_QR_CODE);
-		qrCode = "12345HU";
+		qrCode = job.optString(KEY_QR_CODE);
 		address = new AddressInfo(job);
 		jfRemain = job.optString(KEY_JF_REMAIN);
 	}

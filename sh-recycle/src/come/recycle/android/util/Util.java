@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -13,6 +14,7 @@ import com.google.zxing.EncodeHintType;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
+import com.google.zxing.qrcode.QRCodeWriter;
 import com.recycle.recycle.R;
 
 
@@ -175,7 +177,7 @@ public final class Util {
                 mBitmap.getWidth(), mBitmap.getHeight(), m, false);  
         MultiFormatWriter writer = new MultiFormatWriter();  
         Hashtable<EncodeHintType, String> hst = new Hashtable<EncodeHintType, String>();  
-        hst.put(EncodeHintType.CHARACTER_SET, "UTF-8");//设置字符编码  
+        hst.put(EncodeHintType.CHARACTER_SET, "utf-8");//设置字符编码  
         BitMatrix matrix = writer.encode(string, format, 400, 400, hst);//生成二维码矩阵信息  
         int width = matrix.getWidth();//矩阵高度  
         int height = matrix.getHeight();//矩阵宽度  
@@ -203,6 +205,38 @@ public final class Util {
         bitmap.setPixels(pixels, 0, width, 0, 0, width, height);  
         return bitmap;  
     }
+    
+    /** 
+     * 生成一个二维码图像 
+     *  
+     * @param url 
+     *            传入的字符串，通常是一个URL 
+     * @param widthAndHeight 
+     *           图像的宽高 
+     * @return 
+     */  
+    public static Bitmap generateBitmap(String content,int width, int height) {  
+        QRCodeWriter qrCodeWriter = new QRCodeWriter();  
+        Hashtable<EncodeHintType, String> hints = new Hashtable<>();  
+        hints.put(EncodeHintType.CHARACTER_SET, "utf-8");  
+        try {  
+            BitMatrix encode = qrCodeWriter.encode(content, BarcodeFormat.QR_CODE, width, height, hints);  
+            int[] pixels = new int[width * height];  
+            for (int i = 0; i < height; i++) {  
+                for (int j = 0; j < width; j++) {  
+                    if (encode.get(j, i)) {  
+                        pixels[i * width + j] = 0x00000000;  
+                    } else {  
+                        pixels[i * width + j] = 0xffffffff;  
+                    }  
+                }  
+            }  
+            return Bitmap.createBitmap(pixels, 0, width, width, height, Bitmap.Config.RGB_565);  
+        } catch (WriterException e) {  
+            e.printStackTrace();  
+        }  
+        return null;  
+    } 
     
 
 }

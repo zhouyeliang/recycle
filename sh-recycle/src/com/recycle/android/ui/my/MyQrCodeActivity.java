@@ -60,12 +60,8 @@ public class MyQrCodeActivity extends BaseActivity implements OnClickListener{
 		qrCodeImageView = (ImageView)findViewById(R.id.qr_code);
 		logo=BitmapFactory.decodeResource(super.getResources(),R.drawable.ic_launcher);
 		if(UserDataManager.getInstance().isLogin()){
-			try {
-				qrCodeImageView.setImageBitmap(Util.createCode(UserDataManager.getInstance().getUser().getQrCode(),
-						logo, BarcodeFormat.QR_CODE));
-			} catch (WriterException e) {
-				e.printStackTrace();
-			}
+			qrCodeImageView.setImageBitmap(Util.generateBitmap(UserDataManager.getInstance().getUser().getQrCode(),
+					400, 400));
 		}
 	}
 

@@ -206,30 +206,31 @@ public class MainActivity extends Activity implements OnClickListener {
 			}else{
 				Toast.makeText(this, "请先登录!", Toast.LENGTH_SHORT).show();
 			}
-			/*userDataManager.goQrLogin(MainActivity.this, "13251325", new DataResponseListener<Boolean>() {
-				@Override
-				public void response(Boolean t) {
-					if(t){
-						logoutBtn.setVisibility(View.VISIBLE);
-						noLoginLayout.setVisibility(View.GONE);
-						loginLayout.setVisibility(View.VISIBLE);
-						nameTv.setText("姓名：" + userDataManager.getUser().getUserName());
-						addressTv.setText("住址：" + userDataManager.getUser().getAddress().getAddress());
-						jfTv.setText("当前账户积分余额：" + userDataManager.getUser().getJfRemain() + "分");
-						paperBtn.setClickable(true);
-						plasicBtn.setClickable(true);
-						applianceBtn.setClickable(true);
-						glassBtn.setClickable(true);
-						phoneBtn.setClickable(true);
-						sendPortData(port,"010300000005");
-					}else{
-						Toast.makeText(MainActivity.this, "登录失败，请检查您的二维码是否正确！", Toast.LENGTH_SHORT).show();
-					}
-				}
-			});*/
+			
 			break;
 		case R.id.life_btn:
-			Util.jumpTo(this, LifeActivity.class);
+			//Util.jumpTo(this, LifeActivity.class);
+			/*userDataManager.goQrLogin(MainActivity.this, "13251325", new DataResponseListener<Boolean>() {
+			@Override
+			public void response(Boolean t) {
+				if(t){
+					logoutBtn.setVisibility(View.VISIBLE);
+					noLoginLayout.setVisibility(View.GONE);
+					loginLayout.setVisibility(View.VISIBLE);
+					nameTv.setText("姓名：" + userDataManager.getUser().getUserName());
+					addressTv.setText("住址：" + userDataManager.getUser().getAddress().getAddress());
+					jfTv.setText("当前账户积分余额：" + userDataManager.getUser().getJfRemain() + "分");
+					paperBtn.setClickable(true);
+					plasicBtn.setClickable(true);
+					applianceBtn.setClickable(true);
+					glassBtn.setClickable(true);
+					phoneBtn.setClickable(true);
+					sendPortData(port,"010300000005");
+				}else{
+					Toast.makeText(MainActivity.this, "登录失败，请检查您的二维码是否正确！", Toast.LENGTH_SHORT).show();
+				}
+			}
+		});*/
 			break;
 		case R.id.logout_btn:
 			nameTv.setText("");
@@ -244,6 +245,16 @@ public class MainActivity extends Activity implements OnClickListener {
 			glassBtn.setClickable(false);
 			phoneBtn.setClickable(false);
 			userDataManager.logout();
+			sendPortData(port,"010200000000");
+			sendPortData(port,"010200010000");
+			sendPortData(port,"010200020000");
+			sendPortData(port,"010200030000");
+			sendPortData(port,"010200040000");
+			paperBtn.setSelected(false);
+			plasicBtn.setSelected(false);
+			applianceBtn.setSelected(false);
+			glassBtn.setSelected(false);
+			phoneBtn.setSelected(false);
 			jumpTo = false;
 			break;
 		default:
@@ -291,6 +302,17 @@ public class MainActivity extends Activity implements OnClickListener {
 							applianceBtn.setClickable(true);
 							glassBtn.setClickable(true);
 							phoneBtn.setClickable(true);
+							//关闭所有箱子，计算重量
+							sendPortData(port,"010200000000");
+							sendPortData(port,"010200010000");
+							sendPortData(port,"010200020000");
+							sendPortData(port,"010200030000");
+							sendPortData(port,"010200040000");
+							paperBtn.setSelected(false);
+							plasicBtn.setSelected(false);
+							applianceBtn.setSelected(false);
+							glassBtn.setSelected(false);
+							phoneBtn.setSelected(false);
 							sendPortData(port,"010300000005");
 						}else{
 							Toast.makeText(MainActivity.this, "登录失败，请检查您的二维码是否正确！", Toast.LENGTH_SHORT).show();
@@ -364,31 +386,31 @@ public class MainActivity extends Activity implements OnClickListener {
     			final int subPhone = Integer.parseInt(result.substring(26, 30), 16) - paperKg;
     			StringBuffer categoryIds = new StringBuffer();
     			StringBuffer nums = new StringBuffer();
-    			
-    			/*categoryIds.append("1").append("|");
-    			nums.append(Math.subPaper + "").append("|");
+    			categoryIds.append("1").append("|");
+    			nums.append(Util.convertKgToG(subPaper) + "").append("|");
     			categoryIds.append("2").append("|");
-    			nums.append("subPlasic").append("|");
+    			nums.append(Util.convertKgToG(subPlasic)+"").append("|");
     			categoryIds.append("4").append("|");
-    			nums.append("subApp").append("|");
+    			nums.append(Util.convertKgToG(subApp)+"").append("|");
     			categoryIds.append("3").append("|");
-    			nums.append("subGlass").append("|");
+    			nums.append(Util.convertKgToG(subGlass)+"").append("|");
     			categoryIds.append("5");
-    			nums.append("subPhone");*/
+    			nums.append(Util.convertKgToG(subPhone)+"");
 				OrderDataManager.getInstance().goOrder(MainActivity.this, categoryIds.toString(), nums.toString(), UserDataManager.getInstance().getUser().getUserId()+"",
 						null, null, null, null,new DataResponseListener<JackJson>() {
 							@Override
 							public void response(JackJson t) {
 								if(t!=null){
 									Bundle bundle = new Bundle();
-					    			bundle.putInt("paper", subPaper);
-					    			bundle.putInt("plasic", subPlasic);
-					    			bundle.putInt("app", subApp);
-					    			bundle.putInt("glass", subGlass);
-					    			bundle.putInt("phone", subPhone);
+					    			bundle.putString("paper", Util.convertKgToG(subPaper)+"");
+					    			bundle.putString("plasic", Util.convertKgToG(subPlasic)+"");
+					    			bundle.putString("app", Util.convertKgToG(subApp)+"");
+					    			bundle.putString("glass", Util.convertKgToG(subGlass)+"");
+					    			bundle.putString("phone", Util.convertKgToG(subPhone)+"");
 					    			Util.jumpTo(MainActivity.this, RecycleActivity.class,bundle);
+								}else{
+									Toast.makeText(MainActivity.this, "下订单失败", Toast.LENGTH_SHORT).show();
 								}
-								
 							}
 				});
 				

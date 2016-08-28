@@ -1,0 +1,27 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">14dp</dimen>
+    <dimen name="activity_vertical_margin">14dp</dimen>
+    
+    <!-- 字体大小定义 -->
+    <dimen name="thirtyfour_px">17sp</dimen>
+    <dimen name="twenty_px">10sp</dimen>
+    <dimen name="twentytwo_px">11sp</dimen>
+    <dimen name="twentysix_px">13sp</dimen>
+    <dimen name="twentyeight_px">14sp</dimen>
+    <dimen name="thirty_px">15sp</dimen>
+    <dimen name="thirtytwo_px">16sp</dimen>
+    <dimen name="thirtysix_px">18sp</dimen>
+    <dimen name="thirtyeight_px">19sp</dimen>
+    
+    <!-- 侧滑菜单相关 -->
+    <dimen name="image_left">20dp</dimen>
+	<dimen name="text_left">9dp</dimen>
+	<dimen name="item_height">52dp</dimen>
+	
+	
+	<!-- 订单审核页面相关 -->
+	<dimen name="check_img">45dp</dimen>
+	
+</resources>

@@ -1,0 +1,329 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="20dp"
+    android:paddingTop="10dp"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:text="易收环保垃圾分类智能回收系统"
+        android:textSize="55sp"/>
+    
+    <RelativeLayout 
+        android:layout_height="300dp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="17dp"
+        android:background="@color/green">
+        
+        <ImageView 
+            android:layout_width="500dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="35dp"
+            android:layout_marginLeft="200dp"/>
+        
+       	<LinearLayout 
+       	    android:id="@+id/no_login_layout" 
+            android:layout_width="800dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="170dp"
+            android:padding="10dp"
+            android:orientation="vertical">
+            
+            <LinearLayout
+                
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal">
+                <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1.请打开手机APP，在设备上扫'个人中心'的二维码登录"
+                android:textColor="#ffffff"
+                android:textSize="33dp"/>
+                <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                android:text="2.您可以联系易收公司为您制作用户卡片"
+                android:textColor="#ffffff"
+                android:textSize="33dp"/>
+            </LinearLayout>
+            
+            
+        </LinearLayout>
+        
+        
+        
+       	
+        <LinearLayout 
+            android:id="@+id/login_layout" 
+            android:visibility="gone"
+            android:layout_width="800dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="170dp"
+            android:padding="10dp"
+            android:orientation="vertical"
+            android:background="#b2e5c6">
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="用户中心:"
+                android:textColor="#333333"
+                android:textSize="33dp"/>
+            <TextView
+                android:id="@+id/name_tv" 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="姓名：张晓红"
+                android:textColor="#333333"
+                android:textSize="31dp"/>
+            <TextView 
+                android:id="@+id/address_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="住址：杭州市"
+                android:textColor="#333333"
+                android:textSize="31dp"/>
+            <TextView 
+                android:id="@+id/jf_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="当前账户积分余额：1300分"
+                android:textColor="#333333"
+                android:textSize="31dp"/>
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="您可以使用手机APP或\n登录www.eshou.cn查询或修改个人信息"
+                android:textColor="#333333"
+                android:textSize="24dp"/>
+            
+        </LinearLayout>
+        
+    </RelativeLayout>
+    
+
+    
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="7dp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/green"
+        android:text="请根据分类垃圾选择相应的投放箱"
+        android:textSize="38sp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="30dp" >
+
+        <LinearLayout
+            android:id="@+id/paper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:background="@drawable/btn_selector"
+            android:orientation="vertical"
+            android:padding="20dp" >
+
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="120dp"
+                android:src="@drawable/paper" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="废纸"
+                android:textSize="32sp"
+                android:textColor="#739838" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/plasic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_toRightOf="@id/paper"
+            android:background="@drawable/btn_selector"
+            android:orientation="vertical"
+            android:padding="20dp" >
+
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="120dp"
+                android:src="@drawable/plasic" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="废塑料"
+                android:textSize="32sp" 
+                android:textColor="#739838"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/appliance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_toRightOf="@id/plasic"
+            android:background="@drawable/btn_selector"
+            android:orientation="vertical"
+            android:padding="20dp" >
+
+            <ImageView
+                 android:layout_width="160dp"
+                android:layout_height="120dp"
+                android:src="@drawable/metal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="废金属"
+                android:textSize="32sp"
+                android:textColor="#739838" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/glass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_toRightOf="@id/appliance"
+            android:background="@drawable/btn_selector"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <ImageView
+                 android:layout_width="160dp"
+                android:layout_height="120dp"
+                android:src="@drawable/glass" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="废玻璃"
+                android:textSize="30sp" 
+                android:textColor="#739838"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_toRightOf="@id/glass"
+            android:background="@drawable/btn_selector"
+            android:orientation="vertical"
+            android:padding="20dp" >
+
+            <ImageView
+                 android:layout_width="180dp"
+                android:layout_height="120dp"
+                android:src="@drawable/appliance" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="废电子产品"
+                android:textSize="28sp"
+                android:textColor="#739838" />
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="70dp"
+            android:orientation="vertical" >
+            
+            <Button 
+                android:id="@+id/ok_btn"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:background="@drawable/button_background_green"
+                android:text="确定"
+                android:textColor="#ffffff"
+                android:textSize="28sp"/>
+            
+            <Button 
+                android:id="@+id/life_btn"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:background="@drawable/button_background_orange"
+                android:layout_marginTop="10dp"
+                android:text="到商城兑换积分"
+                android:textColor="#ffffff"
+                android:textSize="28sp"/>
+            
+            <Button 
+                android:id="@+id/logout_btn"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:background="@drawable/button_background_blue"
+                android:layout_marginTop="10dp"
+                android:text="退出登录"
+                android:textColor="#ffffff"
+                android:textSize="28sp"
+                android:visibility="gone"/>
+            
+        </LinearLayout>
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="70dp"
+            android:lineSpacingExtra="7dp"
+            android:layout_alignParentBottom="true"
+            android:text="设备使用说明:\n1.分类投放前请将纸板箱拆散后整齐放入；容器内有残留液体请倾倒干净。\n2.设备使用说明：扫描APP上二维码（用户卡片）登录个人账户→根据需要投放的废品选择点击相应的按钮→在打开的废品箱内依次投放→投放完毕后点击完毕按钮"
+            android:textColor="#333333"
+            android:textSize="21sp"/>
+    </RelativeLayout>
+    
+    <View 
+        style="@style/line"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"/>
+    <TextView 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:lineSpacingExtra="6dp"
+            android:gravity="center"
+            android:text="杭州易收环保科技有限公司   www.eshou.cn 联系电话：0571-85873727\n系统版本号:V1.0 设备号:00001" 
+            android:textColor="#666666"
+            android:textSize="16sp"/>
+    
+</LinearLayout>

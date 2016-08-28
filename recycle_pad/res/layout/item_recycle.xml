@@ -1,0 +1,32 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="#ffffff"
+    tools:context=".DrawerLayoutActivity" >
+    
+    <TextView 
+        android:id="@+id/recycle_type_text"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:textSize="24sp"
+        android:text="111111"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"/>
+    
+    <View 
+        android:id="@+id/green_line"
+        android:layout_width="6dp"
+        android:layout_height="80dp"
+        android:background="#19c87f"
+        android:visibility="visible"/>
+    
+    <View 
+        android:id="@+id/grey_line"
+        android:layout_width="1px"
+        android:layout_height="match_parent"
+        android:background="#D4D4D4"
+        android:layout_gravity="right"/>
+
+</FrameLayout>

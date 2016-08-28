@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.recycle_pad"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="12"
+        android:targetSdkVersion="18" />
+    
+     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"></uses-permission>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:name="com.recycle.pad.main.MyApplication"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.recycle.pad.main.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="com.recycle.pad.ui.life.LifeActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape">
+        </activity>
+        <activity android:name="com.recycle.pad.ui.life.CategoryDetailActivity"
+            android:screenOrientation="landscape">
+        </activity>
+        
+        <activity android:name="com.recycle.pad.ui.life.LifeOrderActivity"
+            android:screenOrientation="landscape">
+        </activity>
+        <activity android:name="com.recycle.pad.ui.life.LifePrintActivity"
+            android:screenOrientation="landscape">
+        </activity>
+        <activity android:name="com.recycle.pad.ui.recycle.RecycleActivity"
+            android:screenOrientation="landscape">
+        </activity>
+        <activity android:name="com.recycle.pad.ui.recycle.RecycleSuccessActivity"
+            android:screenOrientation="landscape">
+        </activity>
+        
+        <receiver android:name="com.recycle.pad.receiver.BootBroadcastReceiver">
+        	<intent-filter>
+        	<action android:name="android.intent.action.BOOT_COMPLETED" />
+        	<category android:name="android.intent.category.HOME" />
+        </intent-filter>
+    </receiver>
+        
+        <service android:name="com.recycle.pad.print.WorkService" />
+    </application>
+
+</manifest>

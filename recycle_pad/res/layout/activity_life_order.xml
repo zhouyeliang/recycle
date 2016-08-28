@@ -1,0 +1,142 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingTop="30dp" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="垃圾分类绿色商城"
+        android:textSize="55sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+         android:layout_height="500dp"
+        android:background="#F2F2F2"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="50dp"
+                android:text="张女士  本次您将出售如下产品。"
+                android:textSize="26sp" />
+
+            <ListView
+                android:id="@+id/order_cate_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:layout_below="@id/name"
+                android:layout_weight="1"
+                android:dividerHeight="1px"
+                android:scrollbars="none" >
+            </ListView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/orer_user_delivery_relative"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingLeft="20dp" >
+            
+            <TextView
+                android:id="@+id/des"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="60dp"
+                android:text="您在提交订单后可选择打印纸质兑换券或使用App上同步形成的电子兑换券"
+                android:textColor="#4D4D4D"
+                android:layout_alignParentBottom="true"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/orer_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="总计积分:1000积分"
+                android:layout_marginBottom="16dp"
+                android:layout_above="@id/des"
+                android:textColor="#4D4D4D"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/orer_jf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:layout_above="@id/orer_num"
+                android:text="您已选购:10件商品"
+                android:textColor="#4D4D4D"
+                android:textSize="22sp" />
+
+            
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_marginTop="80dp"
+        android:gravity="center_horizontal">
+        
+        <Button
+        android:id="@+id/go_add"
+        android:layout_width="400dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/button_background_green"
+        android:gravity="center"
+        android:text="继续添加"
+        android:layout_marginRight="80dp"
+        android:textColor="#ffffff"
+        android:textSize="28sp" />
+
+    <Button
+        android:id="@+id/order_button"
+        android:layout_width="400dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/button_background_orange"
+        android:text="提交订单，去结算"
+        android:textColor="#ffffff"
+        android:textSize="28sp" />
+        
+    </LinearLayout>
+
+    
+
+    <View 
+        style="@style/line"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"/>
+    <TextView 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:lineSpacingExtra="6dp"
+            android:gravity="center"
+            android:text="杭州易收环保科技有限公司   www.eshou.cn 联系电话：0571-85873727\n系统版本号:V1.0 设备号:00001" 
+            android:textColor="#666666"
+            android:textSize="16sp"/>
+
+</LinearLayout>

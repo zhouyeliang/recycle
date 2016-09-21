@@ -56,10 +56,17 @@ public class MyAddressActivity extends BaseActivity implements OnClickListener{
 	
 	private void initData(){
 		list = new ArrayList<AddressInfo>();
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
 		if(UserDataManager.getInstance().isLogin()){
+			list.clear();
 			if(!UserDataManager.getInstance().getUser().getAddress().getName().isEmpty()){
 				list.add(UserDataManager.getInstance().getUser().getAddress());
 			}
+			adapter.notifyDataSetChanged();
 		}
 	}
 	

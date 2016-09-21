@@ -92,7 +92,7 @@ public class OrderActivity extends BaseActivity implements OnClickListener{
 	
 	private OrderDataManager orderDataManager;
 	
-	private String startTime = "";
+	private String endTime = "";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -191,12 +191,12 @@ public class OrderActivity extends BaseActivity implements OnClickListener{
 						nums.append(info.getCategoryNum()).append("|");
 					}
 				}
-				if(startTime.equals("")){
+				if(endTime.equals("")){
 					Toast.makeText(mContext, "请选择配送时间", 2).show();
 					return;
 				}
 				orderDataManager.goOrder(mContext, categoryIds.toString(), nums.toString(), userDataManager.getUser().getUserId(),personNameView.getText().toString(),
-						addressView.getText().toString(),telephoneView.getText().toString(),startTime,
+						addressView.getText().toString(),telephoneView.getText().toString(),endTime,
 						new DataModelResponseListener() {
 					@Override
 					public void response(JackJson model) {
@@ -232,7 +232,7 @@ public class OrderActivity extends BaseActivity implements OnClickListener{
 				@Override
 				public void onConfirm(int month, int day, int hour, int minute) {
 					timeStart.setText(month+"/"+day+" "+hour+":"+minute+" ");
-					startTime = norYear +"-"+month+"-"+day + " " + hour+":"+minute;
+					endTime = norYear +"-"+month+"-"+day + " " + hour+":"+minute;
 				}
 				
 			}).show();

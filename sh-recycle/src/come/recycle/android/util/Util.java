@@ -1,13 +1,24 @@
 package come.recycle.android.util;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import android.app.Activity;
+import android.app.ActivityManager;
+import android.app.ActivityManager.RunningTaskInfo;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Matrix;
+import android.os.Bundle;
+import android.os.PowerManager;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
@@ -15,22 +26,6 @@ import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
-import com.recycle.recycle.R;
-
-
-import android.app.Activity;
-import android.app.ActivityManager;
-import android.app.Dialog;
-import android.app.ActivityManager.RunningTaskInfo;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.DialogInterface.OnKeyListener;
-import android.graphics.Bitmap;
-import android.graphics.Matrix;
-import android.os.Bundle;
-import android.os.PowerManager;
-import android.view.KeyEvent;
 
 
 
@@ -217,7 +212,7 @@ public final class Util {
      */  
     public static Bitmap generateBitmap(String content,int width, int height) {  
         QRCodeWriter qrCodeWriter = new QRCodeWriter();  
-        Hashtable<EncodeHintType, String> hints = new Hashtable<>();  
+        Hashtable<EncodeHintType, String> hints = new Hashtable<EncodeHintType, String>();  
         hints.put(EncodeHintType.CHARACTER_SET, "utf-8");  
         try {  
             BitMatrix encode = qrCodeWriter.encode(content, BarcodeFormat.QR_CODE, width, height, hints);  
@@ -237,6 +232,14 @@ public final class Util {
         }  
         return null;  
     } 
+    
+    /**
+	 * 获取当前时间并转换成yyyy-MM-dd HH:mm:ss样式
+	 * @return
+	 */
+	public static String getTimeStamp() {
+		return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+	}
     
 
 }

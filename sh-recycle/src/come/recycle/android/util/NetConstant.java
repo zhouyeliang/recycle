@@ -49,7 +49,7 @@ public final class NetConstant {
 	
 	public static final String URL_GET_LIFE_ORDER_LIST = "http://www.e-shou.cn/buylist.ashx";
 	
-	public static final String URL_ADD_ADDRESS = "http://www.e-shou.cn/address.ashx";
+	public static final String URL_ADD_ADDRESS = "http://www.e-shou.cn/addressedit.ashx";
 	
 	/**
 	 * 意见反馈

@@ -4,6 +4,7 @@ import java.util.Map;
 
 import com.recycle.android.net.action.ActAbsSthReq;
 import come.recycle.android.util.NetConstant;
+import come.recycle.android.util.Util;
 
 public class GoOrderReq extends ActAbsSthReq {
 	
@@ -19,17 +20,17 @@ public class GoOrderReq extends ActAbsSthReq {
 	
 	private String phone;
 	
-	private String startTime;
+	private String endTime;
 	
 	public GoOrderReq(String userId,String categoryIds,String numbers,String name,String address,String phone
-			,String startTime){
+			,String endTime){
 		this.userId = userId;
 		this.categoryIds = categoryIds;
 		this.numbers = numbers;
 		this.name = name;
 		this.address = address;
 		this.phone = phone;
-		this.startTime = startTime;
+		this.endTime = endTime;
 	}
 
 	@Override
@@ -40,7 +41,8 @@ public class GoOrderReq extends ActAbsSthReq {
 		halfway.put("name", name);
 		halfway.put("address", address);
 		halfway.put("phone", phone);
-		halfway.put("start_time", startTime);
+		halfway.put("start_time", Util.getTimeStamp());
+		halfway.put("end_time", endTime);
 		return halfway;
 	}
 
